@@ -21,6 +21,7 @@ texture:
       url: "/"
     - title: About
       url: "/about"
+  analytics_id: G-JJDYPRVLJN
 
   social_links:
     github: ysbakker
@@ -33,3 +34,4 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-target-blank
+  - jekyll-sitemap
