@@ -24,10 +24,20 @@
       {% endunless %}
     </title>
   
-  
 
-  
-    <link rel="shortcut icon" href="{{ site.url }}{{ site.baseurl }}/favicon.png">
+    <link rel="apple-touch-icon"
+          sizes="180x180"
+          href="{{ site.url }}{{ site.baseurl }}/assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="{{ site.url }}{{ site.baseurl }}/assets/images/favicon/favicon-32x32.png">
+    <link rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="{{ site.url }}{{ site.baseurl }}/assets/images/favicon/favicon-16x16.png">
+    <link rel="manifest"
+          href="{{ site.url }}{{ site.baseurl }}/assets/images/favicon/site.webmanifest">
     <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ site.url }}{{ site.baseurl }}/atom.xml">
     <link rel="alternate" type="application/json" title="{{ site.title }}" href="{{ site.url }}{{ site.baseurl }}/feed.json" />
     <link rel="sitemap" type="application/xml" title="sitemap" href="{{ site.url }}{{ site.baseurl }}/sitemap.xml" />
