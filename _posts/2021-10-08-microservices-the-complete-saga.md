@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Microservices: the complete saga"
+title: "Microservices: the complete saga (🇳🇱)"
 description: Deze blog gaat over compensating transactions en het saga pattern toegepast in een microservice-architectuur.
-date: 2021-10-08 17:00:00 +0200
+summary: Deze blog gaat over compensating transactions en het saga pattern toegepast in een microservice-architectuur.
 ---
 
 In deze blog beschrijf ik een manier om gedistribueerde transacties toe te passen in een microservice-architectuur met behulp van het [saga pattern](https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/saga/saga) en het [compensating transactions pattern](https://docs.microsoft.com/en-us/azure/architecture/patterns/compensating-transaction).

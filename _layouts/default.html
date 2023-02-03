@@ -1,0 +1,97 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async
+        src="https://www.googletagmanager.com/gtag/js?id=G-3EP7KLCYVP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-3EP7KLCYVP');
+</script>
+
+
+
+
+<body>
+  <main>
+    {% include anchor_headings.html html=content anchorBody="#" %}
+  </main>
+
+
+
+  <script>
+    function setTheme(theme) {
+      if (theme === "dark") {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        window.localStorage.setItem('theme', 'dark');
+        document.getElementById("theme-toggle").classList.add('sun');
+        document.getElementById("theme-toggle").classList.remove('moon');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        window.localStorage.setItem('theme', 'light');
+        document.getElementById("theme-toggle").classList.add('moon');
+        document.getElementById("theme-toggle").classList.remove('sun');
+      }
+    }
+
+    let theme = localStorage.getItem('theme');
+
+    theme = theme || (window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light' : 'light');
+
+    setTheme(theme);
+
+    function modeSwitcher() {
+      let currentMode = document.documentElement.getAttribute('data-theme');
+
+      if (currentMode === "dark") {
+        setTheme('light');
+      } else {
+        setTheme('dark');
+      }
+    }
+  </script>
+
+  <script>
+    function external_new_window() {
+      for (var c = document.getElementsByTagName("a"), a = 0; a < c.length; a++) {
+        console.log("hi");
+        var b = c[a];
+        if (b.getAttribute("href") && b.hostname !== location.hostname) {
+          b.target = "_blank";
+          b.rel = "noopener";
+        }
+      }
+    }
+    external_new_window();
+  </script>
+
+</body>
+
+<footer class="social-footer">
+  <div class="social-footer-icons">
+    <a href="https://github.com/ysbakker"
+       title="Github profile"
+       target="_blank"
+       rel="noopener noreferrer"><i class="fa fa-github"
+         aria-hidden="true"></i></a>
+    <a href="https://www.linkedin.com/in/yorrick-bakker-203938173"
+       title="LinkedIn"
+       target="_blank"
+       rel="noopener noreferrer"><i class="fa fa-linkedin"
+         aria-hidden="true"></i></a>
+    <a href="{{site.url}}{{ site.baseurl }}/atom.xml"
+       title="Feed RSS"
+       target="_blank"
+       rel="noopener noreferrer"><i class="fa fa-rss"
+         aria-hidden="true"></i></a>
+  </div>
+</footer>
+
+</html>

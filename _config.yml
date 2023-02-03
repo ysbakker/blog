@@ -1,37 +1,86 @@
+site: blog.yorrick.dev
 title: blog.yorrick.dev
-email: hi@yorrick.dev
-author: Yorrick Bakker
+greetings: Yorrick Bakker
 description: >-
-  This is my tech blog. I sometimes write something here. Sometimes in Dutch, sometimes in English.
-baseurl: ""
+  I'm an IT consultant at Info Support in the Netherlands. I write about stuff that interests me here.
+lang: en-US
+timezone:  Europe/Amsterdam
+data-theme: dark
+
+author:
+  name: Yorrick Bakker
+  bio: I'm an IT consultant from the Netherlands
+  github: ysbakker
+  email: hi@yorrick.dev
+
+# Font Settings
+googlewebfonts: family=Montserrat:wght@400;700&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,300;1,400;1,500;1,600;1,700;1,900
+
+# URL settings
 url: "https://blog.yorrick.dev"
-show_excerpts: true
+baseurl: ""
+permalink: pretty
 
-theme: texture
+# local
+# url: "http://localhost:4000"
+# baseurl: ""
 
-texture:
-  title: Yorrick Bakker
-  tagline: Software Engineering Student
-  date_format: "%b %-d, %Y"
-  style: "blue"
-  showPicker: false
-  showNav: true
-  navigation:
-    - title: Home
-      url: "/"
-    - title: About
-      url: "/about"
-  analytics_id: G-JJDYPRVLJN
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
-  social_links:
-    github: ysbakker
-    linkedIn: in/yorrick-bakker-203938173/
+exclude:
+  - .jekyll-cache
+  - .obsidian
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE.md
+  - README.md
+  - CONTRIBUTING.md
+  
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
 
 sass:
-  style: :compressed
+  sass_dir: _sass
+  style: compressed
 
 plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-target-blank
+  - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-relative-links
+
+collections:
+  pages:
+    output: true
+    permalink: /:name
+  posts:
+    output: true
+    permalink: /:year/:month/:day/:slug
+  
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+relative_links:
+  enabled:     true
+  collections: false
+
+
